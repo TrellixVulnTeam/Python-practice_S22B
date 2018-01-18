@@ -33,4 +33,4 @@
 
 # print("Hello, {0}, 成绩提升了 {1:.1f}%".format('小明', 17.123))
 
-print('中文'.encode('gb2312'))
+# print('中文'.encode('gb2312'))

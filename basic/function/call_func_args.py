@@ -1,4 +1,3 @@
-''' the_list_tuple '''
 #!/user/bin/env python3
 # -*- coding: utf-8 -*-
 

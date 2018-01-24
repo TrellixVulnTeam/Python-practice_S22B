@@ -54,8 +54,8 @@ from functools import reduce
 
 
 def str2float(s):
-
-    pass
+    t = s.replace('.', '')
+    return reduce(lambda x, y: x * 10 + y, map(int, t)) / (10 ** (len(s) - 1 - s.index('.')))
 
 
 print('str2float(\'123.456\') =', str2float('123.456'))

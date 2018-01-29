@@ -69,12 +69,39 @@
 # 再按成绩从高到低排序：
 
 
-L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+# L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
 
 
-def by_score(t):
-    return t[1]
+# def by_score(t):
+#     return t[1]
 
 
-L2 = sorted(L, key=by_score, reverse=True)
-print(L2)
+# L2 = sorted(L, key=by_score, reverse=True)
+# print(L2)
+
+
+# =====================================================================
+
+def _odd_iter():
+    n = 1
+    while True:
+        n = n + 2
+        yield n
+
+
+def _not_divisible(n):
+    return lambda x: x % n > 0
+
+
+def primes():
+    yield 2
+    it = _odd_iter()
+    while True:
+        n = next(it)
+        yield n
+        it = filter(_not_divisible(n), it)
+
+
+for p in primes():
+    if p < 1000:
+        print(p)

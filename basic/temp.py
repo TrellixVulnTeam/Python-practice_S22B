@@ -25,15 +25,41 @@
 
 # print([x for x in test() if x % 3 > 0])
 
-import functools
+# import functools
 
-def f1(x, y=2):
-    print('x = ' + str(x) + ' , y = ' + str(y))
+# def f1(x, y=2):
+#     print('x = ' + str(x) + ' , y = ' + str(y))
 
 
-# kw = {'x': 4, 'y': 5}
+# # kw = {'x': 4, 'y': 5}
 
-# f1(**kw)
+# # f1(**kw)
 
-f2 = functools.partial(f1, **{'x': 4, 'y': 5})
-f2()
+# f2 = functools.partial(f1, **{'x': 4, 'y': 5})
+# f2()
+
+def _not_divisible(n):
+    return lambda x: x % n > 0
+
+
+def _do_itec():
+    n = 3
+    while True:
+        yield n
+        n += 2
+
+
+def primes():
+    yield 2
+    it = _do_itec()
+    while True:
+        n = next(it)
+        yield n
+        it = filter(_not_divisible(n), it)
+
+
+for i in primes():
+    if i < 100:
+        print(i)
+    else:
+        break

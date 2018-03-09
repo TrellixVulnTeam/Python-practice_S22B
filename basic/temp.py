@@ -38,28 +38,37 @@
 # f2 = functools.partial(f1, **{'x': 4, 'y': 5})
 # f2()
 
-def _not_divisible(n):
-    return lambda x: x % n > 0
+# def _not_divisible(n):
+#     return lambda x: x % n > 0
 
 
-def _do_itec():
-    n = 3
-    while True:
-        yield n
-        n += 2
+# def _do_itec():
+#     n = 3
+#     while True:
+#         yield n
+#         n += 2
 
 
-def primes():
-    yield 2
-    it = _do_itec()
-    while True:
-        n = next(it)
-        yield n
-        it = filter(_not_divisible(n), it)
+# def primes():
+#     yield 2
+#     it = _do_itec()
+#     while True:
+#         n = next(it)
+#         yield n
+#         it = filter(_not_divisible(n), it)
 
 
-for i in primes():
-    if i < 100:
-        print(i)
-    else:
-        break
+# for i in primes():
+#     if i < 100:
+#         print(i)
+#     else:
+#         break
+
+
+import os
+
+L = [d for d in os.listdir('.')]
+print(L)
+
+# a = 'A81110101_昗弨巇條_僕儑僀儞僩嵽僞僀僾抐柺.dwg'.encode('ansi')
+# print(a.decode('Shift_JIS'))

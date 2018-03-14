@@ -65,10 +65,16 @@
 #         break
 
 
-import os
+# import os
 
-L = [d for d in os.listdir('.')]
-print(L)
+# L = [d for d in os.listdir('.')]
+# print(L)
 
 # a = 'A81110101_昗弨巇條_僕儑僀儞僩嵽僞僀僾抐柺.dwg'.encode('ansi')
 # print(a.decode('Shift_JIS'))
+
+a = 257
+b = 257
+
+print(a == b)
+print(a is b)

@@ -12,7 +12,7 @@ import os
 # print(os.path.abspath('.'))
 # print(os.path.abspath('/kugou'))
 
-# mypath = os.path.join('/kugou', 'haha')
+# mypath = os.path.join('./kugou', 'haha')
 
 # os.mkdir(mypath)
 # os.rmdir(mypath)
@@ -26,6 +26,8 @@ import os
 # os.rename('1.txt', '2.txt')
 # os.remove('2.txt')
 # os.rmdir('2.txt')
+# 
+# os.remove('2.txt')
 
 # L = [x for x in os.listdir('.') if os.path.isfile(x)]
 # print(L)
@@ -41,20 +43,20 @@ import os
 
 # 1.
 
-import os
-import time
+# import os
+# import time
 
-# 获取当前目录下的目录结构['aaa', 'dir.py', 'io.py']
-list = os.listdir('.')
+# # 获取当前目录下的目录结构['aaa', 'dir.py', 'io.py']
+# list = os.listdir('.')
 
-print('%s\t\t\t\t%s\t\t%s\t\t%s' % ('Time', 'Type', 'Size', 'Name'))
-for i in list:
-    fname = i
-    ftime = time.strftime('%Y-%m-%d %H:%M:%S',
-                          time.localtime(os.path.getmtime(fname)))
-    fsize = os.path.getsize(fname)
-    flag = '<\DIR>' if os.path.isdir(fname) else 'file'
-    print('%s\t\t%s\t\t%4s\t\t%s' % (ftime, flag, fsize, fname))
+# print('%s\t\t\t\t%s\t\t%s\t\t%s' % ('Time', 'Type', 'Size', 'Name'))
+# for i in list:
+#     fname = i
+#     ftime = time.strftime('%Y-%m-%d %H:%M:%S',
+#                           time.localtime(os.path.getmtime(fname)))
+#     fsize = os.path.getsize(fname)
+#     flag = '<\DIR>' if os.path.isdir(fname) else 'file'
+#     print('%s\t\t%s\t\t%4s\t\t%s' % (ftime, flag, fsize, fname))
 
 
 # 2.

@@ -17,18 +17,18 @@ def vote():
     opener = urllib.request.build_opener(handler)  # 通过handler来构建opener
 
     response = opener.open(pre_url)  # 此处的open方法同urllib2的urlopen方法，也可以传入request
-    time.sleep(2)
+    time.sleep(1)
     response = opener.open(url)
     print(response.read().decode())
 
 
 def auto_vote():
-    n = 1000
-    while n >= 0:
+    n = 1
+    while True:
         print('index = %s start ...' % n)
         vote()
         print('index = %s   end ...' % n)
-        n = n - 1
+        n = n + 1
         time.sleep(1)
 
 

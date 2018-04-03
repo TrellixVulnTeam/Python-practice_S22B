@@ -73,8 +73,26 @@
 # a = 'A81110101_昗弨巇條_僕儑僀儞僩嵽僞僀僾抐柺.dwg'.encode('ansi')
 # print(a.decode('Shift_JIS'))
 
-a = 257
-b = 257
+# a = 257
+# b = 257
 
-print(a == b)
-print(a is b)
+# print(a == b)
+# print(a is b)
+
+def my_squer(n):
+    if n < 0:
+        raise Exception('illegal arg lower than zero')
+    if n == 1 or n == 0:
+        print('value: %.7f' % n)
+        return
+
+    g = n/2
+    different = 1
+    while different > 0.0001:
+        g = (g + n/g)/2
+        different = abs(g*g - n)
+
+    print('value: %.7f' % g)
+
+
+my_squer(121)

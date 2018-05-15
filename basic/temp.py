@@ -79,20 +79,52 @@
 # print(a == b)
 # print(a is b)
 
-def my_squer(n):
-    if n < 0:
-        raise Exception('illegal arg lower than zero')
-    if n == 1 or n == 0:
-        print('value: %.7f' % n)
-        return
+# def my_squer(n):
+#     if n < 0:
+#         raise Exception('illegal arg lower than zero')
+#     if n == 1 or n == 0:
+#         print('value: %.7f' % n)
+#         return
 
-    g = n/2
-    different = 1
-    while different > 0.0001:
-        g = (g + n/g)/2
-        different = abs(g*g - n)
+#     g = n/2
+#     different = 1
+#     while different > 0.0001:
+#         g = (g + n/g)/2
+#         different = abs(g*g - n)
 
-    print('value: %.7f' % g)
+#     print('value: %.7f' % g)
 
 
-my_squer(121)
+# my_squer(121)
+
+import math
+import time
+
+log_2 = math.log(2)
+
+
+def log2(x):
+    return math.log(x) / math.log(2)
+
+
+def log2_second(x):
+    return math.log(x) / log_2
+
+
+start_time = time.time()
+
+for i in range(99999999):
+    log2(9999999999)
+
+ent_time = time.time()
+spend_time = ent_time - start_time
+print(spend_time)
+start_time = time.time()
+
+for i in range(99999999):
+    log2_second(9999999999)
+
+ent_time = time.time()
+spend_time = ent_time - start_time
+
+print(spend_time)

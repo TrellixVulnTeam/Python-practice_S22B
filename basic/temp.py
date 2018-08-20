@@ -97,34 +97,54 @@
 
 # my_squer(121)
 
-import math
-import time
+# import math
+# import time
 
-log_2 = math.log(2)
-
-
-def log2(x):
-    return math.log(x) / math.log(2)
+# log_2 = math.log(2)
 
 
-def log2_second(x):
-    return math.log(x) / log_2
+# def log2(x):
+#     return math.log(x) / math.log(2)
 
 
-start_time = time.time()
+# def log2_second(x):
+#     return math.log(x) / log_2
 
-for i in range(99999999):
-    log2(9999999999)
 
-ent_time = time.time()
-spend_time = ent_time - start_time
-print(spend_time)
-start_time = time.time()
+# start_time = time.time()
 
-for i in range(99999999):
-    log2_second(9999999999)
+# for i in range(99999999):
+#     log2(9999999999)
 
-ent_time = time.time()
-spend_time = ent_time - start_time
+# ent_time = time.time()
+# spend_time = ent_time - start_time
+# print(spend_time)
+# start_time = time.time()
 
-print(spend_time)
+# for i in range(99999999):
+#     log2_second(9999999999)
+
+# ent_time = time.time()
+# spend_time = ent_time - start_time
+
+# print(spend_time)
+
+# import re
+
+# mail = 'someone@gmail.com'
+# mail = '<Tom Paris> tom@voyager.org'
+# #   re_mail = re.compile(r'^\w+(\.\w+)?\d*@[\w\d]+\.(com|org)$')
+# re_mail = re.compile(r'^(<\w+\s+\w+>)\s+(\w+(\.\w+)?\d*@[\w\d]+\.(com|org))$')
+# print(re_mail.match(mail))
+
+
+# (<\w+\s+\w>)\s+
+
+
+foo = []
+for i in range(1, 6):
+    # foo.append((lambda j: (lambda: j))(i))
+    foo.append(lambda i= i: i)
+
+for f in foo:
+    print(f())

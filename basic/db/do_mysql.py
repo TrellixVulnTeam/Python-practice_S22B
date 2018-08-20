@@ -4,7 +4,7 @@
 import mysql.connector
 
 conn = mysql.connector.connect(
-    user='root', password='Satan1221', database='test')
+    user='root', password='Satan1221', database='awesome')
 cursor = conn.cursor()
 
 # cursor.execute(
@@ -18,7 +18,7 @@ cursor = conn.cursor()
 # conn.commit()
 # conn.close()
 
-cursor.execute('select * from user')
+cursor.execute('select * from users')
 users = cursor.fetchall()
 print(users)
 

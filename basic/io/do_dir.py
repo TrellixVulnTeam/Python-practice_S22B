@@ -30,7 +30,8 @@ import os
 # os.remove('2.txt')
 
 # L = [x for x in os.listdir('.') if os.path.isfile(x)]
-# print(L)
+L = [x for x in os.listdir('.')]
+print(L)
 
 # a = 'apis.py'
 # print(os.path.splitext(a))

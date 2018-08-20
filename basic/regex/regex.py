@@ -39,22 +39,22 @@
 # <Tom Paris> tom@voyager.org => Tom Paris
 # bob@example.com => bob
 # -*- coding: utf-8 -*-
-import re
+# import re
 
 
-def name_of_email(addr):
-    re_mail = re.compile(r'(<(\w+\s+\w+)>)?\s*([\w\.]+)@\w+.\w+')
-    first = re_mail.match(addr).group(2)
-    two = re_mail.match(addr).group(3)
-    if first:
-        print('first test name: ' + first)
-        return first
-    else:
-        print('two test name: ' + two)
-        return two
+# def name_of_email(addr):
+#     re_mail = re.compile(r'(<(\w+\s+\w+)>)?\s*([\w\.]+)@\w+.\w+')
+#     first = re_mail.match(addr).group(2)
+#     two = re_mail.match(addr).group(3)
+#     if first:
+#         print('first test name: ' + first)
+#         return first
+#     else:
+#         print('two test name: ' + two)
+#         return two
 
 
-# 测试:
-assert name_of_email('<Tom Paris> tom@voyager.org') == 'Tom Paris'
-assert name_of_email('tom@voyager.org') == 'tom'
-print('ok')
+# # 测试:
+# assert name_of_email('<Tom Paris> tom@voyager.org') == 'Tom Paris'
+# assert name_of_email('tom@voyager.org') == 'tom'
+# print('ok')

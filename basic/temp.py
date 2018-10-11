@@ -141,10 +141,99 @@
 # (<\w+\s+\w>)\s+
 
 
-foo = []
-for i in range(1, 6):
-    # foo.append((lambda j: (lambda: j))(i))
-    foo.append(lambda i= i: i)
+# foo = []
+# for i in range(1, 6):
+#     # foo.append((lambda j: (lambda: j))(i))
+#     foo.append(lambda i= i: i)
 
-for f in foo:
-    print(f())
+# for f in foo:
+#     print(f())
+
+# import socket
+# import time
+
+
+# def get_host_ip():
+#     sock = socket.create_connection(('ns1.dnspod.net', 6666))
+#     sock.settimeout(10)
+#     ip = sock.recv(16)
+#     sock.close()
+#     return ip
+
+
+# def local_log(file_name, text):
+#     fo = open(file_name, "a")
+#     strTime = time.asctime(time.localtime(time.time()))
+#     # print strTime
+#     fo.write(strTime+" ip:"+text)
+#     fo.close()
+
+
+# print(get_host_ip())
+# domain_ip = socket.gethostbyname("vlzz.xyz")
+# print(domain_ip)
+
+# ip = b'27.184.48.50';
+# print(str(ip))
+# print(str(ip) == domain_ip)
+
+# def twoSum(nums, target):
+#     """
+#     :type nums: List[int]
+#     :type target: int
+#     :rtype: List[int]
+#     """
+#     d = {}
+#     # for i in range(len(nums)):
+#     #     d[nums[i]] = i
+#     # for i in range(len(nums)):
+#     #     last_num = target - nums[i]
+#     #     if last_num in d and d[last_num] != i:
+#     #         return [i, last_num]
+#     for i in  range(len(nums)):
+#         other_num = target - nums[i]
+#         if other_num in d:
+#             return [d[other_num]+1, i+1]
+#         d[nums[i]] = i
+
+# nums = [2, 7, 11, 15]
+# target = 9
+
+# print(twoSum(nums, target))
+
+class Interval:
+    def __init__(self, s=0, e=0):
+        self.start = s
+        self.end = e
+
+
+# def by_start(interval):
+#     return interval.start
+
+
+def merge(intervals):
+    """
+    :type intervals: List[Interval]
+    :rtype: List[Interval]
+    """
+    if not intervals:
+        return []
+
+    intervals = sorted(intervals, key=lambda x: x.start)
+    L = []
+    last_end = 0
+    for i in range(len(intervals)):
+        if i == 0:
+            L.append([intervals[0].start, intervals[0].end])
+        elif intervals[i].start <= last_end:
+            if intervals[i].end > last_end:
+                L[-1][-1] = intervals[i].end
+        else:
+            L.append([intervals[i].start, intervals[i].end])
+        last_end = L[-1][-1]
+    return L
+
+
+# intervals = [Interval(1, 3), Interval(2, 6), Interval(8, 10), Interval(15, 18)]
+intervals = [Interval(0, 2), Interval(1, 4), Interval(3, 5)]
+print(merge(intervals))
